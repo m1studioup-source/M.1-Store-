@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- 🚀 ADVANCED SEO META TAGS START -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>M1 Store</title>
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="M1 Store">
+<meta name="description" content="Download 100% Free Android Games and Apps with High-Speed Direct Links. No Ads, No Login required! M1 Store by M.1 Studio.">
+<meta name="author" content="M.1 Studio">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#00d2ff">
+
+<!-- Canonical Link -->
+<link rel="canonical" href="https://m1studioup-source.github.io/M.1-Store-/" />
+
+<!-- 📱 Open Graph / Facebook / WhatsApp Preview Meta -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://m1studioup-source.github.io/M.1-Store-/">
+<meta property="og:title" content="M1 Store">
+<meta property="og:description" content="Download Top Android Games & Apps with One-Click Fast Download. No Ads & 100% Virus Free!">
+<meta property="og:image" content="M1.jpg">
+
+<!-- 🐦 Twitter Preview Meta -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://m1studioup-source.github.io/M.1-Store-/">
+<meta property="twitter:title" content="M1 Store">
+<meta property="twitter:description" content="Get premium Android games for free without ads or login! M.1 Studio Official Store.">
+<meta property="twitter:image" content="M1.jpg">
+
+<!-- 🎯 WEBSITE FAVICON & APP ICON (PWA READY) -->
+<link rel="icon" type="image/jpeg" href="M1.jpg">
+<link rel="apple-touch-icon" href="M1.jpg">
+<!-- Web Manifest Dynamic Setup -->
+<link rel="manifest" id="manifestPlaceholder">
+<!-- 🚀 ADVANCED SEO META TAGS END -->
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #080c14, #0f172a, #131d33);
+      color: #f0f0f0;
+    }
+    header {
+      background: #0b1120;
+      padding: 15px;
+      text-align: center;
+      color: #00d2ff;
+      border-bottom: 2px solid rgba(0, 210, 255, 0.2);
+    }
+    .header-logo {
+      width: 38px;
+      height: 38px;
+      vertical-align: middle;
+      border-radius: 50%;
+      margin-right: 8px;
+      border: 2px solid #00d2ff;
+      object-fit: cover;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: rgba(0, 210, 255, 0.2);
+      color: #00d2ff;
+    }
+    .page { display: none; padding: 20px; animation: fadeIn 0.5s ease-in-out; }
+    .active { display: block; }
+    .card {
+      background: #111a2e;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 210, 255, 0.15);
+      box-shadow: 0 0 10px #00000050;
+    }
+    input, button {
+      padding: 10px; margin: 5px 0; border-radius: 8px; border: none; font-size: 16px; width: 100%; box-sizing: border-box;
+    }
+    input {
+      background: #080c14;
+      color: #fff;
+      border: 1px solid #1e293b;
+    }
+    input:focus {
+      outline: none;
+      border-color: #00d2ff;
+    }
+    button { cursor: pointer; transition: opacity 0.3s; }
+    button:hover { opacity: 0.9; }
+    .btn { background: linear-gradient(90deg, #00c6ff, #0072ff); color: #fff; font-weight: bold; }
+    .pagination-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .page-info {
+      align-self: center;
+      font-weight: bold;
+      color: #00d2ff;
+    }
+    .game-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: #162238;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+      position: relative;
+      border: 1px solid rgba(0, 210, 255, 0.2);
+    }
+    .game-logo {
+      flex: 0 0 auto;
+      margin-right: 15px;
+    }
+    .game-card > div:last-child {
+      flex: 1 1 200px;
+      min-width: 0;
+    }
+    .game-card h3, .game-card p {
+      margin: 5px 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    .logo-circle {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #00d2ff, #005cff);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(0, 210, 255, 0.6);
+    }
+    .logo-circle img {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .gpu-selection-group {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 10px;
+      border: 1px dashed #00d2ff;
+      position: relative;
+    }
+    .gpu-selection-group p {
+      color: #00d2ff;
+      font-size: 13px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .close-gpu-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #ff4d4d !important;
+      color: white !important;
+      width: 24px !important;
+      height: 24px !important;
+      padding: 0 !important;
+      font-size: 14px !important;
+      font-weight: bold !important;
+      border-radius: 50% !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .toggle-screenshots-btn {
+      background: none;
+      color: #00d2ff;
+      width: auto;
+      padding: 5px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      transition: transform 0.3s;
+    }
+    .toggle-screenshots-btn.expanded {
+      transform: rotate(180deg);
+    }
+    .screenshots-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+      width: 100%;
+      flex-basis: 100%;
+    }
+    .screenshots-wrapper.show {
+      max-height: 300px;
+      margin-top: 10px;
+    }
+    .screenshots-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding-bottom: 10px;
+    }
+    .screenshot-img {
+      width: 160px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      border: 1px solid rgba(0, 210, 255, 0.2);
+      background: #0b1120;
+    }
+    .progress-container {
+      width: 100%;
+      background-color: #080c14;
+      border-radius: 5px;
+      margin: 10px 0;
+      display: none;
+    }
+    .progress-bar {
+      width: 0%;
+      height: 10px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      border-radius: 5px;
+      transition: width 0.3s ease;
+    }
+    
+    #disqus_thread {
+      margin-top: 20px;
+      background: #0b1120; 
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 210, 255, 0.2);
+    }
+
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+    .game-desc {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: #cbd5e1;
+      font-size: 14px;
+      margin: 5px 0;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><img src="M1.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' width=\'100\' height=\'100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%2300d2ff\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%23000\' font-weight=\'bold\'>M1</text></svg>'" class="header-logo" alt="Logo"> M1 Store</h1>
+    <nav>
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('games')">Games</a>
+      <a href="#" onclick="showPage('apps')">Apps</a>
+      <a href="#" onclick="showPage('wisdom')">Wisdom</a>
+      <a href="#" onclick="showPage('leaderboard')">M.1 STUDIO</a>
+      <a href="#" onclick="showPage('community')">Community</a>
+      <a href="#" onclick="showPage('about')">About</a>
+      <a href="#" onclick="showPage('profile')">Profile</a>
+    </nav>
+  </header>
+
+  <div id="home" class="page active">
+    <div class="card">
+      <h2>Welcome</h2>
+      <p id="dailyQuote"></p>
+    </div>
+  </div>
+
+  <div id="games" class="page">
+    <div class="card">
+      <h2>Games Library</h2>
+      <input type="text" id="searchBar" placeholder="Search games..." onkeyup="filterGames()">
+      <div id="gamesList"></div>
+      <div class="pagination-controls">
+        <button class="btn" id="prevGames" onclick="changePage('games', -1)" style="width: auto;">Previous</button>
+        <span class="page-info" id="gamesPageInfo">Page 1</span>
+        <button class="btn" id="nextGames" onclick="changePage('games', 1)" style="width: auto;">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="apps" class="page">
+    <div class="card">
+      <h2>Apps Station</h2>
+      <input type="text" id="appSearchBar" placeholder="Search apps..." onkeyup="filterApps()">
+      <div id="appsList"></div>
+      <div class="pagination-controls">
+        <button class="btn" id="prevApps" onclick="changePage('apps', -1)" style="width: auto;">Previous</button>
+        <span class="page-info" id="appsPageInfo">Page 1</span>
+        <button class="btn" id="nextApps" onclick="changePage('apps', 1)" style="width: auto;">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="wisdom" class="page">
+    <div class="card">
+      <h2>🌟 Daily Wisdom</h2>
+      <p id="wisdomText" style="font-size: 20px; text-align: center; color: #00d2ff; font-weight: bold;"></p>
+    </div>
+  </div>
+
+  <div id="leaderboard" class="page">
+    <div class="card">
+      <h2>🏆 SPECIAL THANKS</h2>
+      <ol>
+        <li>MEER ALI</li>
+        <li>SIKANDAR MIRZA</li>
+        <li>MALIK REHAN</li>
+        <li>MALIK AYAZ</li>
+        <li>SAMEER</li>
+      </ol>
+    </div>
+  </div>
+
+  <div id="community" class="page">
+    <div class="card">
+      <h2>🤝 Community Discussion</h2>
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+  <div id="about" class="page">
+    <div class="card">
+      <h2>About</h2>
+      <p>📱 App Section Coming Soon! 🔥 We are working hard to bring you amazing apps in the next update. Stay tuned!</p>
+      <p>Have feedback or any issues? Drop them in the Community section. We are listening 👊</p>
+      <p>M1 Store is your ultimate destination for high-quality games and apps. Explore our library, unlock premium content with codes, and join our community.</p>
+    </div>
+  </div>
+
+  <div id="profile" class="page">
+    <div class="card">
+      <h2>Your Profile</h2>
+      <p id="profileStatus">Guest Mode — No login required.</p>
+    </div>
+  </div>
+
+  <script>
+    // Dynamic Inline PWA Manifest Builder (Bina alag manifest file banaye PWA App Install ho jayegi!)
+    const pwaManifest = {
+      "short_name": "M1 Store",
+      "name": "M1 Store Official App",
+      "icons": [
+        {
+          "src": "M1.jpg",
+          "sizes": "192x192 512x512",
+          "type": "image/jpeg",
+          "purpose": "any maskable"
+        }
+      ],
+      "start_url": "./index.html",
+      "background_color": "#080c14",
+      "theme_color": "#00d2ff",
+      "display": "standalone"
+    };
+    const stringManifest = JSON.stringify(pwaManifest);
+    const blobManifest = new Blob([stringManifest], {type: 'application/json'});
+    const manifestURL = URL.createObjectURL(blobManifest);
+    document.getElementById('manifestPlaceholder').setAttribute('href', manifestURL);
+
+    const UNLOCKS = {
+      "GTA_ADRENO": "https://archive.org/download/com.rockstargames.gtasa_202601/com.rockstargames.gtasa.zip",
+      "GTA_MALI": "https://archive.org/download/gtasa-lite-mali-gpu/GTASA_Lite_MALI_GPU.zip",
+      "GTA_POWERVR": "https://archive.org/download/gtasa-lite-all-gpu.-7z/GTASA_Lite_All_GPU.7z",
+      "MINIPARTY2026": "https://quiet-pegasus-bf6904.netlify.app/download/mini_game.apk",
+      "itachi444": "https://archive.org/download/itachi-1.4-apkpure/Itachi%20%F0%9F%94%A5%20%F0%9F%92%A5_1.4_APKPure.apk",
+      "wcc2026": "https://archive.org/download/wcc2_20260123/wcc2.apk",
+      "FSB526": "https://archive.org/download/fsb_20260129/fsb.apk",
+      "RACING456": "https://archive.org/download/hill-climb-racing-mod_1.67.8-an1.com/hill-climb-racing-mod_1.67.8-an1.com.apk",
+      "DR404": "https://archive.org/download/dr-driving-mod_1.73-an1.com/dr-driving-mod_1.73-an1.com.apk",
+      "FEAR556": "https://archive.org/download/the-fear-2/the%20fear%202.apk",
+      "TRUCK4": "https://archive.org/download/truck-simulator-off-road-4-3.6-old-version/Truck%20Simulator%20OffRoad%204_3.6_APKPure.apk",
+      "TRUCK2026": "https://archive.org/download/truck-simulator-offroad-2-1.1.7-apkpure/Truck%20Simulator%20Offroad%202_1.1.7_APKPure.apk",
+      "GETTING26": "https://archive.org/download/com.noodlecake.gettingoverit_1.9.12-APK_Award/com.noodlecake.gettingoverit_1.9.12-APK_Award.apk",
+      "STR99": "https://archive.org/download/slender-the-arrival-45-apkpure/Slender_%20The%20Arrival_45_APKPure.apk",
+      "BBL567": "https://archive.org/download/big-bash-cricket-2.0-apkpure/Big%20Bash%20Cricket_2.0_APKPure.xapk",
+      "FARMING2026": "https://archive.org/download/farming-simulator-18-mod_1.5.0.3-an1.com/farming-simulator-18-mod_1.5.0.3-an1.com.apk",
+      "VECTOR1": "https://archive.org/download/com.nekki.vector_1.3.4-5000111_minapi19armeabi-v7anodpi_apkmirror.com/com.nekki.vector_1.3.4-5000111_minAPI19%28armeabi-v7a%29%28nodpi%29_apkmirror.com.apk",
+      "SARF2026": "https://archive.org/download/subway-surfers-mod_3.58.0-an1.com/subway-surfers-mod_3.58.0-an1.com.apk",
+      "CAR2026": "https://archive.org/download/asphalt-nitro_202601/asphalt-nitro.apk",
+      "THE FEAR": "https://archive.org/download/the-fear-creepy-scream-house/the-fear-creepy-scream-house.apk",
+      "DEATH1": "https://archive.org/download/death-park-scary-clown-horror-2.2.1-apkpure/Death%20Park_%20Scary%20Clown%20Horror_2.2.1_APKPure.xapk",
+      "TAMPLE2": "https://archive.org/download/temple-run-2-apk-mod-unlimited-money-v-1.86.0-zigmods.com/Temple%20Run%202%20apk%20%28MOD%20-%20Unlimited%20Money%29%20v1.86.0%20zigmods.com.apk",
+      "OLD FF": "https://www.mediafire.com/file/knglxiy50x3wcjl/Rzim_Server_V3_2018.apk/file?dkey=sf326ewlpe1&r=242"
+    };
+
+    const GAMES = [
+      { code: "OLD FF", name: "FREE FIRE ", rating: "4.6", desc: "Size: 450MB | Free Fire Offline Mod: Experience the classic Battle Royale vibe on any low-end Android mobile.", logo:'<div class="logo-circle"><img src="freefire.jpg" alt="free fire Icon"></div>', ss: ["freefire1.jpg", "freefire2.jpg", "freefire3.jpg"] },
+      { code: "GTA SAN", name: "GTA SAN ANDREAS LITE", rating: "4.3", desc: "Size: 350MB | Grand Theft Auto: San Andreas Mobile Lite highly compressed version.", logo:'<div class="logo-circle"><img src="GTA-SAN.jpg" alt="GTA SAN Icon"></div>', ss: ["pika1.jpg", "pika2.jpg", "pika.jpg"] },
+      { code: "STR99", name: "SLENDER THE ARRIVAL", rating: "4.5", desc: "Size: 400MB | Experience the most terrifying Slender: The Arrival horror game on Android.", logo:'<div class="logo-circle"><img src="str.jpg" alt="str.jpg"></div>', ss: ["str1.jpg", "str2.jpg", "str3.jpg"] },
+      { code: "itachi444", name: "ITACHI UCHIHA", rating: "4.2", desc: "Size: 25MB | Master the legendary Uchiha power in this Itachi 2D action game.", logo:'<div class="logo-circle"><img src="itachi.jpg" alt="itachi pic"></div>', ss: ["itachi12.jpg", "itachi2.jpg", "itachi3.jpg"] },
+      { code: "wcc2026", name: "WCC2", rating: "4.4", desc: "Size: 400MB | World Cricket Championship 2 (WCC2) old version APK for professional cricket.", logo:'<div class="logo-circle"><img src="wcc-2.jpg" alt="WCC2"></div>', ss: ["wcc1.jpg", "wcc32.jpg", "wcc4.jpg"] },
+      { code: "FSB526", name: "FREE SURVIVAL FIRE BATTLEGROUND", rating: "4.3", desc: "Size: 300MB | Experience the intense Battle Royale action with Free Survival Fire.", logo:'<div class="logo-circle"><img src="fsb.jpg" alt="FSB PIC"></div>', ss: ["fsb1.jpg", "fsb2.jpg", "fsb3.jpg"] },
+      { code: "RACING456", name: "HILL CLIMB RACING", rating: "4.5", desc: "Size: 55MB | Hill Climb Racing Mod APK with unlimited money, fuel, and unlocked vehicles.", logo:'<div class="logo-circle"><img src="HILL.jpg" alt="CLIMB Icon"></div>', ss: ["hill1.jpg", "hill2.jpg", "hill3.jpg"] },
+      { code: "DR404", name: "DR DRIVING", rating: "4.4", desc: "Size: 12MB | Dr. Driving APK: The classic parking and driving simulator for Android.", logo:'<div class="logo-circle"><img src="DR-D.jpg" alt="DR DRIVING Icon"></div>', ss: ["Dr1.jpg", "Dr2.jpg", "Dr3.jpg"] },
+      { code: "FEAR556", name: "THE FEAR 2", rating: "4.3", desc: "Size: 60MB | The Fear 2: Creepy Scream House is a bone-chilling horror masterpiece.", logo:'<div class="logo-circle"><img src="FEAR.jpg" alt="madara Icon"></div>', ss: ["fear1.jpg", "fear2.jpg", "fear3.jpg"] },
+      { code: "TRUCK2026", name: "TRUCK SIMULATOR OFF ROAD 2", rating: "4.2", desc: "Size: 90MB | Realistic Truck Simulator Off Road 2 for Android mobile.", logo:'<div class="logo-circle"><img src="truck2.jpg" alt="Truck Sim 2"></div>', ss: ["trucki1.jpg", "trucki2.jpg", "trucki3.jpg"] },
+      { code: "GETTING26", name: "GETTING OVER IT", rating: "4.4", desc: "Size: 120MB | Getting Over It with Bennett Foddy: The ultimate test of patience.", logo:'<div class="logo-circle"><img src="getting.jpg" alt="getting"></div>', ss: ["gt1.jpg", "gt2.jpg", "gt3.jpg"] },
+      { code: "SARF2026", name: "SUBWAY SURFERS", rating: "4.3", desc: "Size: 150MB | Subway Surfers Mod APK: Unlimited coins, keys, and all characters unlocked.", logo:'<div class="logo-circle"><img src="SARF.jpg" alt="subway Icon"></div>', ss: ["sub1.jpg", "sub2.jpg", "sub3.jpg"] },
+      { code: "TAMPLE2", name: "TUMPLE RUN 2", rating: "4.5", desc: "Size: 110MB | Temple Run 2 Mod APK: Unlimited gems and all legendary maps unlocked.", logo:'<div class="logo-circle"><img src="tample.jpg" alt="TAMPLE2 Icon"></div>', ss: ["tmp1.jpg", "tmp2.jpg", "tmp3.jpg"] },
+      { code: "VECTOR1", name: "VECTOR", rating: "4.2", desc: "Size: 50MB | Vector 1.3.4 classic edition: The original parkour-inspired action runner.", logo:'<div class="logo-circle"><img src="Vector.jpg" alt="VECTOR Icon"></div>', ss: ["vector1.jpg", "vector2.jpg", "vector3.jpg"] },
+      { code: "BBL567", name: "BIG BASH LEAGUE", rating: "4.4", desc: "Size: 60MB | Official Big Bash League Cricket v1.0.7 for Android.", logo:'<div class="logo-circle"><img src="BBL.jpg" alt="BBL"></div>', ss: ["bbl1.jpg", "bbl2.jpg", "bbl3.jpg"] },
+      { code: "FARMING2026", name: "FARMING SIMULATOR 18", rating: "4.3", desc: "Size: 160MB | Farming Simulator 18 Mod APK: Unlimited money to build your empire.", logo:'<div class="logo-circle"><img src="FS18.jpg" alt="FARMING Icon"></div>', ss: ["frm1.jpg", "frm2.jpg", "frm3.jpg"] },
+      { code: "DEATH1", name: "DEATH PARK", rating: "4.3", desc: "Size: 150MB | Death Park: Scary Clown Survival. A terrifying horror game.", logo:'<div class="logo-circle"><img src="death.jpg" alt="DEATH Icon"></div>', ss: ["dth1.jpg", "dth2.jpg", "dth3.jpg"] },
+      { code: "CAR2026", name: "ASPHALT NITRO", rating: "4.2", desc: "Size: 45MB | Asphalt Nitro: The ultimate racing experience in just 45MB.", logo:'<div class="logo-circle"><img src="asphalt.jpg" alt="Asphalt Icon"></div>', ss: ["car1.jpg", "car2.jpg", "car3.jpg"] },
+      { code: "TRUCK4", name: "TRUCK SIMULATOR OFF ROAD 4", rating: "4.4", desc: "Size: 110MB | Truck Simulator Off Road 4: Extreme driving in mud, forest, and extreme terrain.", logo:'<div class="logo-circle"><img src="truck4.jpg" alt="Truck Sim 4"></div>', ss: ["trucks1.jpg", "trucks2.jpg", "trucks3.jpg"] },
+      { code: "THE FEAR", name: "THE FEAR CREEPY", rating: "4.6", desc: "Size: 60MB | The Fear: Creepy Scream House. A psychological horror game.", logo:'<div class="logo-circle"><img src="thefear.jpg" alt="The Fear Icon"></div>', ss: ["the1.jpg", "the2.jpg", "the3.jpg"] },
+      { code: "MINIPARTY2026", name: "Mini Party", rating: "4.6", desc: "Size: 35MB | Ultimate collection of 20+ multiplayer mini-games to play offline.", logo: '<div class="logo-circle"><img src="M1.png" alt="Mini Party Icon"></div>', ss: ["mini1.jpg", "mini2.jpg", "mini3.jpg"] }
+    ];
+
+    const APPS = [
+      { code: "APPLOCK2026", name: "App Lock", rating: "4.4", desc: "Secure your apps with a smart lock.", logo:'<div class="logo-circle"><img src="lock.png" alt="App Lock Icon"></div>' },
+      { code: "NOTES2026", name: "Smart Notes", rating: "4.5", desc: "Organize your thoughts and tasks easily.", logo:'<div class="logo-circle"><img src="notes.png" alt="Smart Notes Icon"></div>' }
+    ];
+
+    const WISDOMS = [
+      "NAMAZ DEEN KA SUTOON HAI.", 
+      "Dosron ki madad karo allah pak apki madad kary ga.", 
+      "ہمشہ حق اور سچ کا ساتھ دو", 
+      "Apny MAN BAAP ki Izzat Krna He kamyabi hai.",
+      "Takhleef ke baad asani zaroor aati hai.",
+      "Dil saaf rakho, Allah sab dekh raha hai.",
+      "Aaj ka kaam kal par mat chhoro.",
+      "Maan ke qadmon ke neeche jannat hai.",
+      "Sach karwa hota hai magar nijaat deta hai.",
+      "Gharoor insan ko gira deta hai.",
+      "Dusron ke liye asani karo, Allah tumhare liye karega.",
+      "Istighfar karo, dil ka bojh halka hoga.",
+      "Meharban bano, dunya meharban ban jayegi.",
+      "Rizq Allah deta hai, insan nahi.",
+      "Khamoshi aadha masla hal kar deti hai.",
+      "Gunah chota ho ya bara, gunah hi hota hai.",
+      "Neki kar darya me daal."
+    ];
+
+    let currentGamesPage = 1, currentAppsPage = 1;
+    const itemsPerPage = 5;
+
+    function initWeeklyWisdom() {
+      const wisdomContainer = document.getElementById('dailyQuote');
+      if (!wisdomContainer) return;
+
+      const weeklyList = [
+        "Apne waqt ki hifazat karein, yehi aapki sab se bari doulat hai. ✨",
+        "Neki choti ho ya bari, kabhi zaya nahi jati. 🌙",
+        "Sabr ka phal hamesha meetha hota hai, bas yaqeen rakhein. 🤲",
+        "Dusron ki madad karna hi asal kamyabi hai. 🤝",
+        "Har mushkil ke baad aasani hai, mayoos na hon. 🌈",
+        "Jumma Mubarak! Aaj kasrat se Darood Shareef parhein. 🕌",
+        "Achi soch hi insaan ko bara banati hai. 💡"
+      ];
+
+      const todayIndex = new Date().getDay(); 
+      const todayMessage = weeklyList[todayIndex];
+
+      wisdomContainer.innerHTML = `
+    <div style="border-left: 4px solid #00d2ff; padding-left: 15px; margin: 10px 0;">
+      <small style="color: #00d2ff; font-weight: bold; display: block; text-transform: uppercase;">🌙 Aaj Ki Achi Baat:</small>
+      <span style="color: #fff; font-style: italic; font-size: 14px;">"${todayMessage}"</span>
+    </div>
+  `;
+}
+
+function getDeviceId() {
+  let id = localStorage.getItem('vip_device_id');
+  if (!id) {
+    id = 'ID-' + Math.random().toString(36).substr(2, 4).toUpperCase();
+    localStorage.setItem('vip_device_id', id);
+  }
+  return id;
+}
+
+initWeeklyWisdom();
+const deviceId = getDeviceId();
+
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  
+  if(id==="wisdom") {
+    document.getElementById('wisdomText').innerText = WISDOMS[Math.floor(Math.random()*WISDOMS.length)];
+  }
+  
+  if(id==="games") renderItems('games', GAMES, currentGamesPage);
+  if(id==="apps") renderItems('apps', APPS, currentAppsPage);
+}
+function changePage(type, delta) {
+  if (type === 'games') {
+    const next = currentGamesPage + delta;
+    if (next >= 1 && next <= Math.ceil(GAMES.length / itemsPerPage)) {
+      currentGamesPage = next;
+      renderItems('games', GAMES, currentGamesPage);
+    }
+  } else {
+    const next = currentAppsPage + delta;
+    if (next >= 1 && next <= Math.ceil(APPS.length / itemsPerPage)) {
+      currentAppsPage = next;
+      renderItems('apps', APPS, currentAppsPage);
+    }
+  }
+}
+
+function hideAllGPUGroups() {
+  document.querySelectorAll('.gpu-selection-group').forEach(group => {
+    group.style.display = 'none';
+  });
+  document.querySelectorAll('.game-card input, .game-card .btn').forEach(el => {
+    if (!el.getAttribute('onclick') || !el.getAttribute('onclick').includes('startDownloadProcess')) {
+       el.style.display = 'block';
+    }
+  });
+}
+
+function renderItems(type, fullList, page, filterQuery = "") {
+  const listToRender = filterQuery ? fullList.filter(item => item.name.toLowerCase().includes(filterQuery) || item.desc.toLowerCase().includes(filterQuery) || item.code.toLowerCase().includes(filterQuery)) : fullList;
+  const totalPages = Math.ceil(listToRender.length / itemsPerPage);
+  const container = document.getElementById(type === 'games' ? 'gamesList' : 'appsList');
+  const pageInfo = document.getElementById(type === 'games' ? 'gamesPageInfo' : 'appsPageInfo');
+  container.innerHTML = "";
+  const start = (page - 1) * itemsPerPage, end = start + itemsPerPage;
+  const pageItems = listToRender.slice(start, end);
+
+  pageItems.forEach(item => {
+    const screenshots = (item.ss && item.ss.length > 0) ? item.ss : [
+      `https://placehold.co/320x200/203a43/00d2ff?text=${item.name.replace(/\s+/g, '+')}+1`,
+      `https://placehold.co/320x200/203a43/00d2ff?text=${item.name.replace(/\s+/g, '+')}+2`,
+      `https://placehold.co/320x200/203a43/00d2ff?text=${item.name.replace(/\s+/g, '+')}+3`
+    ];
+
+    const div = document.createElement('div');
+    div.className = "game-card";
+    div.innerHTML = `
+      <button id="toggle_btn_${item.code}" class="toggle-screenshots-btn" onclick="toggleScreenshots('${item.code}')">⬇️</button>
+      <div class="game-logo">${item.logo}</div>
+      <div>
+        <h3>${item.name} ★ ${item.rating}</h3>
+          <div class="game-desc">${item.desc}</div>
+        <p><b style="color: #00d2ff;">Code:</b> <span style="color: lightgreen ; font-weight: bold; border: 1px dashed #00d2ff; padding: 2px 5px;">${item.code}</span></p>
+        <input id="input_${item.code}" placeholder="Enter code to download">
+        <div id="progress_container_${item.code}" class="progress-container"><div id="progress_bar_${item.code}" class="progress-bar"></div></div>
+        
+        <button id="btn_${item.code}" class="btn" onclick="checkCode('${item.code}')">Download</button>
+        
+        <div id="gpu_group_${item.code}" class="gpu-selection-group">
+          <button class="close-gpu-btn" onclick="hideAllGPUGroups()">✕</button>
+          <p>SELECT YOUR GPU ARCHITECTURE:</p>
+          <button class="btn" onclick="startDownloadProcess('${item.code}', 'GTA_ADRENO')">🚀 DOWNLOAD ADRENO</button>
+          <button class="btn" onclick="startDownloadProcess('${item.code}', 'GTA_MALI')">🚀 DOWNLOAD MALI</button>
+          <button class="btn" onclick="startDownloadProcess('${item.code}', 'GTA_POWERVR')">🚀 DOWNLOAD POWER VR</button>
+        </div>
+
+        <p id="msg_${item.code}"></p>
+      </div>
+      <div id="shots_wrapper_${item.code}" class="screenshots-wrapper">
+        <div class="screenshots-container">${screenshots.map(src => `<img src="${src}" class="screenshot-img" alt="Screenshot">`).join('')}</div>
+      </div>`;
+    container.appendChild(div);
+  });
+  pageInfo.innerText = `Page ${page} of ${totalPages || 1}`;
+  const prevBtn = document.getElementById(type === 'games' ? 'prevGames' : 'prevApps');
+  const nextBtn = document.getElementById(type === 'games' ? 'nextGames' : 'nextApps');
+  if (prevBtn) prevBtn.disabled = (page <= 1);
+  if (nextBtn) nextBtn.disabled = (page >= totalPages);
+}
+
+function toggleScreenshots(code) {
+  const wrapper = document.getElementById('shots_wrapper_' + code);
+  const btn = document.getElementById('toggle_btn_' + code);
+  const isShowing = wrapper.classList.contains('show');
+  if (isShowing) {
+    wrapper.classList.remove('show');
+    btn.classList.remove('expanded');
+  } else {
+    wrapper.classList.add('show');
+    btn.classList.add('expanded');
+  }
+}
+
+function filterGames(){ 
+  const query = document.getElementById('searchBar').value.toLowerCase(); 
+  currentGamesPage = 1; 
+  renderItems('games', GAMES, currentGamesPage, query); 
+}
+
+function filterApps(){ 
+  const query = document.getElementById('appSearchBar').value.toLowerCase(); 
+  currentAppsPage = 1; 
+  renderItems('apps', APPS, currentAppsPage, query); 
+}
+
+function startDownloadProcess(code, unlockKey) {
+  const msg = document.getElementById('msg_' + code);
+  const btn = document.getElementById('btn_' + code);
+  const gpuGroup = document.getElementById('gpu_group_' + code);
+  const progressContainer = document.getElementById('progress_container_' + code);
+  const progressBar = document.getElementById('progress_bar_' + code);
+  const inputEl = document.getElementById('input_' + code);
+
+  if(gpuGroup) gpuGroup.style.display = "none";
+  msg.innerText = "Connecting & Starting Download...";
+  progressContainer.style.display = "block";
+
+  let width = 0;
+  const interval = setInterval(() => {
+    if (width >= 100) {
+      clearInterval(interval);
+      msg.innerText = "Download Starting...";
+      
+      const link = UNLOCKS[unlockKey] || UNLOCKS[code] || "#";
+      const a = document.createElement('a');
+      a.href = link;
+      a.target = "_blank";
+      a.download = '';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      setTimeout(() => {
+        btn.innerText = "Download again";
+        btn.style.display = "block";
+        inputEl.style.display = "block";
+        inputEl.value = "";
+        progressContainer.style.display = "none";
+        progressBar.style.width = "0%";
+        msg.innerText = "";
+      }, 2000);
+
+    } else {
+      width += 25;
+      if (width > 100) width = 100;
+      progressBar.style.width = width + "%";
+      msg.innerText = "Starting: " + Math.floor(width) + "%";
+    }
+  }, 100);
+}
+
+async function checkCode(code){
+  const inputEl = document.getElementById('input_' + code);
+  if (!inputEl) return;
+  const input = inputEl.value.trim();
+  const msg = document.getElementById('msg_' + code);
+  const btn = document.getElementById('btn_' + code);
+  
+  if(input === code){
+    hideAllGPUGroups();
+    if(code === "GTA SAN") {
+        btn.style.display = "none";
+        inputEl.style.display = "none";
+        document.getElementById('gpu_group_' + code).style.display = "block";
+    } else {
+        startDownloadProcess(code, code);
+    }
+  } else {
+    msg.innerText = "Invalid code. Please try again.";
+    msg.style.color = "#ff4d4d";
+    setTimeout(() => { msg.innerText = ""; msg.style.color = ""; }, 3000);
+  }
+}
+
+// Disqus Integration
+var disqus_config = function () {
+    this.page.url = window.location.href;  
+    this.page.identifier = window.location.pathname; 
+};
+
+(function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://vip-games-portal.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+
+</script>
+</body> 
+</html>
